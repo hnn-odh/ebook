@@ -1,0 +1,5 @@
+{
+  "name": "DGE Report Viewer",
+  "description": "A high-fidelity, RTL-native PDF book viewer with dual-page display, adhering to DGE branding guidelines.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DGE Report Viewer</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "dge-tech-blue": "#215a9e",
+                        "dge-light-blue": "#7da1c4",
+                        "dge-reliable-blue": "#063360",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#063360",
+                    },
+                    fontFamily: {
+                        "noto": ["'Noto Kufi Arabic'", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'book': '0 20px 30px -10px rgba(0, 0, 0, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Kufi Arabic', sans-serif;
+            background-color: #f6f6f8;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* React PDF Canvas Fixes */
+        .react-pdf__Page__canvas {
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto !important;
+        }
+        .react-pdf__Page__textContent {
+            display: none !important; /* Hiding text layer for cleaner visual in this specific design */
+        }
+        .react-pdf__Page__annotations {
+            display: none !important;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-pdf/": "https://esm.sh/react-pdf@^10.3.0/",
+    "react-pdf": "https://esm.sh/react-pdf@^10.3.0"
+  }
+}
+</script>
+</head>
+<body class="overflow-hidden h-screen bg-background-light text-slate-900">
+    <div id="root"></div>
+</body>
+</html>
